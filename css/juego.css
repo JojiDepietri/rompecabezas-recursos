@@ -16,6 +16,7 @@ ul {
 li {
   padding: 5px 0;
   animation: fadein 5s;
+  list-style: none;
 }
 li::before {
   content: "• ";
@@ -54,19 +55,17 @@ li::before {
 }
 
 .col-60 {
-  background: #E84A5F;
   width: 60%;
-  height: auto;
 }
 
 #juego {
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
   grid-template-rows: 33.33% 33.33% 33.33%;
+  background: #E84A5F;
 }
 
 #juego div {
-  /*text-align: center;*/
   box-sizing: border-box;
   width: 100%;
   border: 1px solid #187569;
@@ -77,10 +76,6 @@ li::before {
   width: 100%;
   display: block;
 }
-
-/*#pieza1,#pieza2,#pieza3,#pieza4,#pieza5,#pieza6,#pieza7,#pieza8{
-  margin-bottom: -4px;
-}*/
 
 
 #flecha{
