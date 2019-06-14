@@ -69,7 +69,7 @@ function chequearSiGano() {
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
-  alert("Ganaste");
+  alert("¡Felicitaciones! Ganaste el juego");
 }
 
 /* Función que intercambia dos posiciones en la grilla.
@@ -83,11 +83,9 @@ En vez de intercambiar esos valores vamos a terminar teniendo en ambas posicione
 Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
-    var filaVacia = grilla[filaPos1][columnaPos1];
-    var nuevaFilaVacia = grilla[filaPos2][columnaPos2];
-    var temp = filaVacia;
-    filaVacia = nuevaFilaVacia;
-    nuevaFilaVacia = temp;
+  var temp = grilla[filaPos1][columnaPos1];
+  grilla[filaPos1][columnaPos1] = grilla[filaPos2][columnaPos2];
+  grilla[filaPos2][columnaPos2] = temp;
 }
 
 // Actualiza la posición de la pieza vacía
@@ -99,7 +97,7 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
 
 // Para chequear si la posicón está dentro de la grilla.
 function posicionValida(fila, columna) {
-  if ((fila >= 0 && fila <=2) && (columna >= 0 && columna <=2)) {
+  if (fila >= 0 && fila <=2 && columna >= 0 && columna <=2) {
     return true;
   } else {
     return false;
@@ -114,13 +112,13 @@ function moverEnDireccion(direccion) {
 
   // Mueve pieza hacia la abajo, reemplazandola con la blanca
   if (direccion === codigosDireccion.ABAJO) {
-    nuevaFilaPiezaVacia = filaVacia - 1;
+    nuevaFilaPiezaVacia = filaVacia + 1;
     nuevaColumnaPiezaVacia = columnaVacia;
   }
     
   // Mueve pieza hacia arriba, reemplazandola con la blanca
   else if (direccion === codigosDireccion.ARRIBA) {
-    nuevaFilaPiezaVacia = filaVacia + 1;
+    nuevaFilaPiezaVacia = filaVacia - 1;
     nuevaColumnaPiezaVacia = columnaVacia;
   }
     
