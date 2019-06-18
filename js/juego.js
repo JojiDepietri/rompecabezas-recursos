@@ -1,6 +1,6 @@
 // Arreglo que contiene las intrucciones del juego 
 var instrucciones = [
-  "Utiliza las flechas para mover las piezas.",
+  "Utiliza las flechas del teclado para mover las piezas.",
   "Ordena las piezas para alcanzar la imagen objetivo."
 ];
 // Arreglo para ir guardando los movimientos que se vayan realizando
@@ -59,8 +59,8 @@ function chequearSiGano() {
   }
 
   if(contador === 9) {
-    mostrarCartelGanador();
     return true;
+    mostrarCartelGanador();
   } else {
     return false;
   }
@@ -69,7 +69,8 @@ function chequearSiGano() {
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
-  alert("¡Felicitaciones! Ganaste el juego");
+  var cartelGanador = document.getElementById("cartel-ganador");
+  cartelGanador.classList.value = "mostrar";
 }
 
 /* Función que intercambia dos posiciones en la grilla.
